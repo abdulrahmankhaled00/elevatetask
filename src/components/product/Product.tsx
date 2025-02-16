@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Product({ product }: { product: product }) {
   return (
     
-    <Link href={`/products/${product.id}`} className="max-w-sm rounded overflow-hidden shadow-sm duration-150 transition border hover:shadow-xl">
+    <Link href={`/products/${product.id}`} className=" rounded overflow-hidden shadow-sm duration-150 transition border hover:shadow-xl">
       <Image
         className="w-full h-44 object-contain p-8"
         unoptimized

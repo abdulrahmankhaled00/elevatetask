@@ -1,23 +1,19 @@
-import Product from "@/components/product/Product";
-import { product } from "@/types/types";
-import Image from "next/image";
+import AllProducts from "@/components/product/AllProducts";
+import { Suspense } from "react";
+import loading from './../loading';
+import Loading from "@/components/loading/Loading";
 
-async function Products() {
-  const response = await fetch("https://fakestoreapi.com/products");
-  const products = await response.json();
+async function page() {
+
   return (
     <div className="p-12" >
-      <h3 className=" text-4xl block text-center py-5 ">All Products</h3>
-
-      <div className="grid grid-cols-4 gap-3 w-full ">
-      {products &&
-        products.map((product: product) => (
-          <Product product={product} key={product.id} />
-        ))}
-    </div>
+      <h3 className=" text-4xl block text-center py-5 pt-10 ">All Products</h3>
+      <Suspense fallback={<Loading/>}>
+      <AllProducts/>
+      </Suspense>
     </div>
 
   );
 }
 
-export default Products;
+export default page;
