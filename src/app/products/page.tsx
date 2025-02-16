@@ -1,6 +1,5 @@
 import AllProducts from "@/components/product/AllProducts";
 import { Suspense } from "react";
-import loading from './../loading';
 import Loading from "@/components/loading/Loading";
 
 async function page() {
